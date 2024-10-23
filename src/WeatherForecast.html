@@ -4,14 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="This is a user friendly weather forecast application where users can search the weather information of a place">
+    <meta name="description" content="This is a userfreindly application which provide weather information">
     <link rel="stylesheet" href="./output.css">
-    <title>Weather-info</title>
+    <link rel="icon" href="../Images/Weather_info_icon.ico">
+    <title>Weather information</title>
 </head>
 
-<body>
+<body class=" bg-url bg-no-repeat bg-cover w-screen h-screen overflow-y-auto box-border">
+    <div class="w-screen h-full overflow-y-auto">
+        <!--header-->
+        <header class="flex w-screen h-28 fixed z-10 bg-white opacity-100 box-border">
+            <img src='../Images/Weather-info_logo.png' class="w-44 h-24 pt-4 pl-4 box-border">
+            <h1 class=" font-extrabold w-5/6 pl-96 text-4xl pt-10 text-blue-900 ">Your Daily
+                Weather Guide</h1>
+        </header>
+        <!--main content-->
+        <div class="m-auto border-2 w-5/6 mt-36 overflow-y-auto">
+            <main class="w-full">
+                <section class="flex flex-col items-center justify-center gap-7">
+                    <div class="flex w-3/6 m-auto pt-5 gap-4">
+                        <label class="w-3/12 text-xl text-black-950 font-semibold border-2 pl-4">Search your
+                            city:</label>
+                        <input class="w-8/12 border-blue-950 border-2 h-10 pl-3 " type="text">
+                        <button class="w-2/12 h-10 border-2 border-black">Check weather</button>
 
+                    </div>
+                    <button class="w-44 h-12 border-2 border-black bg-slate-400">Current Location Forecast</button>
+
+                </section>
+            </main>
+        </div>
+        <!--footer-->
+        <footer class=" w-screen border-2 pt-6 ">
+            <p class="m-auto w-2/6">© 2024 Weather-info, Inc. "Weather-info" All Rights Reserved.</p>
+        </footer>
+    </div>
 </body>
 
 </html>
