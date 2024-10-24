@@ -10,14 +10,17 @@
     <title>Weather information</title>
 </head>
 
-<body class=" bg-url bg-no-repeat bg-cover w-screen h-screen overflow-y-auto box-border">
+<body class="bg-custom_blue w-screen h-screen overflow-y-auto box-border">
     <div class="w-screen h-full overflow-y-auto">
+
         <!--header-->
-        <header class="flex w-screen h-28 fixed z-10 bg-white opacity-100 box-border">
-            <img src='../Images/Weather-info_logo.png' class="w-44 h-24 pt-4 pl-4 box-border">
-            <h1 class=" font-extrabold w-5/6 pl-96 text-4xl pt-10 text-blue-900 ">Your Daily
-                Weather Guide</h1>
+        <header class="flex w-screen h-24 fixed z-10 opacity-100 box-border pl-4 pr-36 bg-url bg-no-repeat bg-cover ">
+            <img src='../Images/Weather-info_logo.png' class="w-44 h-24 pt-2  box-border">
+            <div class=" flex items-center justify-center grow">
+                <h1 class=" font-extrabold  text-4xl  text-white ">Your Daily Weather Guide</h1>
+            </div>
         </header>
+
         <!--main content-->
         <div class="m-auto border-2 w-5/6 mt-36 overflow-y-auto">
             <main class="w-full">
@@ -26,14 +29,23 @@
                         <label class="w-3/12 text-xl text-black-950 font-semibold border-2 pl-4">Search your
                             city:</label>
                         <input class="w-8/12 border-blue-950 border-2 h-10 pl-3 " type="text">
-                        <button class="w-2/12 h-10 border-2 border-black">Check weather</button>
+                        <button id="btnCity" class="w-2/12 h-10 border-2 border-black">Check weather</button>
 
                     </div>
-                    <button class="w-44 h-12 border-2 border-black bg-slate-400">Current Location Forecast</button>
+                    <button id="btnLocation" class="w-44 h-12 border-2 border-black bg-slate-400">Current Location
+                        Forecast</button>
 
                 </section>
+                <section>
+                    <div class="displayBlock"></div>
+                    <div class="displayList"></div>
+                </section>
+
+
             </main>
+            <script src="./WeatherForecast.js"></script>
         </div>
+
         <!--footer-->
         <footer class=" w-screen border-2 pt-6 ">
             <p class="m-auto w-2/6">© 2024 Weather-info, Inc. "Weather-info" All Rights Reserved.</p>
