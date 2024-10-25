@@ -1,10 +1,12 @@
-// function to display the weather data after getting reaponse
+// function to display the weather data after getting reaponse by creating elements and appending data
 const displayWeatherData = (response) => {
   console.log(response);
   const dateElement = document.createElement("div");
-  const parent = document.querySelector(".displayBlock");
-  parent.innerHTML = "";
+  const grandParent = document.querySelector("#displayBlocks");
+  const parent = document.createElement("div");
+  grandParent.innerHTML = "";
   parent.appendChild(dateElement);
+  grandParent.appendChild(parent);
   //convert to seconds
   const currentTime = new Date().getTime() / 1000;
   const currentDateItems = response.list.slice(0, 5);
@@ -42,24 +44,73 @@ const displayWeatherData = (response) => {
       return false;
     }
   });
-
   //clear first current day data
   uniqueDateData.shift();
   //loop through the array of unique day weather and create elements and add values
+  const listGrandParent = document.createElement("div");
   uniqueDateData.forEach((element) => {
+    const listParent = document.createElement("div");
     const temp = document.createElement("div");
     const wind = document.createElement("div");
     const description = document.createElement("div");
-    parent.appendChild(temp);
-    parent.appendChild(wind);
-    parent.appendChild(description);
+    listParent.appendChild(temp);
+    listParent.appendChild(wind);
+    listParent.appendChild(description);
+    temp.style.height = "100%";
+    wind.style.height = "40%";
+    description.style.height = "40%";
+    temp.style.width = "40%";
+    wind.style.width = "40%";
+    description.style.width = "40%";
+    listParent.style.width = "40%";
+    listParent.style.height = "40%";
+    listParent.style.display = "flex";
+    listParent.style.flexDirection = "column";
+    listParent.style.flexWrap = "wrap";
+    listParent.style.borderWidth = "2px";
+    listParent.style.backgroundColor = "white";
+    listGrandParent.appendChild(listParent);
+    grandParent.appendChild(listGrandParent);
+    for (const child of listParent.children) {
+      child.style.justifyContent = "center";
+      child.style.alignItems = "center";
+
+      child.style.display = "flex";
+    }
     temp.innerHTML = Math.floor(element.main.temp - 273.15) + "\u00B0C";
     wind.innerHTML = element.wind.speed + "m/s";
     description.innerHTML = element.weather[0].description;
   });
+  //styling the elements
+  for (const child of grandParent.children) {
+    child.style.height = "150px";
+  }
+
+  grandParent.style.width = "100%";
+  grandParent.style.display = "flex";
+  grandParent.style.flexWrap = "wrap";
+  grandParent.style.alignItems = "center";
+
+  grandParent.style.height = "100%";
+  listGrandParent.style.height = "100%";
+  listGrandParent.style.justifyContent = "space-evenly";
+  listGrandParent.style.flexWrap = "wrap";
+  listGrandParent.style.alignItems = "center";
+  listGrandParent.style.display = "flex";
+  listGrandParent.style.width = "60%";
+  //current day data styling
+  parent.style.borderWidth = "2px";
+  parent.style.height = "100%";
+  parent.style.width = "40%";
+  parent.style.margin = "auto";
+  parent.style.display = "flex";
+  parent.style.flexDirection = "column";
+  parent.style.justifyContent = "space-evenly";
+  parent.style.alignItems = "center";
+  temp.style.alignSelf = "flex-start";
 };
 
-//default cdisplay weather for Delhi
+//default display weather for Delhi
 const defaultCity = async () => {
   const response = await fetch(
     "https://api.openweathermap.org/data/2.5/forecast?q=Delhi&appid=0503daf19e9338ad914adf09e0e92fc6"
