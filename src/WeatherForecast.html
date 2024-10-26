@@ -11,7 +11,7 @@
 </head>
 
 <body class="bg-custom_blue w-screen h-screen overflow-y-auto box-border">
-    <div class="w-screen h-full overflow-y-auto ">
+    <div class=" w-screen bg-url2 bg-no-repeat bg-cover h-full overflow-y-auto">
         <!--header-->
         <header class="flex w-screen h-24 fixed z-10 opacity-100 box-border pl-4 pr-36 bg-url bg-no-repeat bg-cover ">
             <img src='../Images/Weather-info_logo.png' class="w-44 h-24 pt-2  box-border">
@@ -21,22 +21,27 @@
         </header>
 
         <!--main content-->
-        <div class="m-auto border-2 w-5/6 mt-36 ">
-            <main class="w-full">
-                <section class="flex flex-col items-center justify-center gap-7">
-                    <div class="flex w-3/6 m-auto pt-5 gap-4">
-                        <label class="w-3/12 text-xl text-black-950 font-semibold border-2 pl-4">Search your
+        <div class="m-auto w-5/6 mt-36 h-5/6 box-border">
+            <main class="w-full h-full box-border">
+                <section class="w-full h-28 ">
+                    <div class="flex w-full justify-center box-border gap-4">
+                        <button id="btnLocation"
+                            class="w-72 font-sans bg-green-700 h-12 font-semibold text-cyan-50 rounded-xl border-2 border-blue-200">Current
+                            Location
+                            Forecast</button>
+                        <label
+                            class="w-3/12 font-semibold text-custom text-black-950 font-semibold pt-3 text-right">Search
+                            your
                             city:</label>
-                        <input id="city" class="w-8/12 border-blue-950 border-2 h-10 pl-3 " type="text">
-                        <button id="btnCity" class="w-2/12 h-10 border-2 border-black">Check weather</button>
+                        <input id="city" class="w-8/12 rounded-3xl border-2 h-12 pl-8 font-sans  " type="text">
+                        <button id="btnCity"
+                            class="w-28 bg-rose-500 text-white font-bold rounded-3xl mt-1  h-10 border-2 border-blue-200">Check
+                        </button>
 
                     </div>
-                    <button id="btnLocation" class="w-44 h-12 border-2 border-black bg-slate-400">Current Location
-                        Forecast</button>
-
                 </section>
-                <section class="w-full h-96 border-2 border-white bg-slate-100">
-                    <div id="displayBlocks"></div>
+                <section class="w-full h-full border-2 border-white">
+                    <div id="displayBlocks" class="box-border"></div>
 
                 </section>
 
@@ -46,8 +51,8 @@
         </div>
 
         <!--footer-->
-        <footer class=" w-screen border-2 pt-6 ">
-            <p class="m-auto w-2/6">© 2024 Weather-info, Inc. "Weather-info" All Rights Reserved.</p>
+        <footer class="relative top-36 w-full pt-6 box-border">
+            <p class="text-center">© 2024 Weather-info, Inc. "Weather-info" All Rights Reserved.</p>
         </footer>
     </div>
 </body>
