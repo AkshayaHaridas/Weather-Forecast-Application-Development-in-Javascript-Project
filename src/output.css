@@ -785,3 +785,20 @@ video {
 .opacity-100 {
   opacity: 1;
 }
+
+@media (min-width: 375px) {
+  .xsm\:hidden {
+    display: none;
+  }
+
+  .xsm\:pl-1 {
+    padding-left: 0.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
