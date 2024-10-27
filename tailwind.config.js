@@ -14,6 +14,9 @@ module.exports = {
       fontSize: {
         custom: "17px", // Custom size
       },
+      screens: {
+        xsm: "375px", // Custom extra small breakpoint
+      },
     },
   },
   plugins: [],
