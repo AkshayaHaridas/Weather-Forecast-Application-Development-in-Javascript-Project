@@ -21,19 +21,19 @@
         </header>
 
         <!--main content-->
-        <div class="m-auto w-5/6 mt-36 h-5/6 box-border">
+        <div class="m-auto w-5/6 mt-36  box-border">
             <main class="w-full h-full box-border">
-                <section class="w-full h-28 ">
+                <section id="inputDiv" class="w-full h-28 ">
                     <div class="flex w-full justify-center box-border gap-4">
                         <button id="btnLocation"
                             class="w-72 font-sans bg-green-700 h-12 font-semibold text-cyan-50 rounded-xl border-2 border-blue-200">Current
                             Location
                             Forecast</button>
-                        <label
-                            class="w-3/12 font-semibold text-custom text-black-950 font-semibold pt-3 text-right">Search
+                        <label class="w-3/12 text-custom text-black-950 font-semibold pt-3 text-right">Search
                             your
                             city:</label>
-                        <input id="city" class="w-8/12 rounded-3xl border-2 h-12 pl-8 font-sans  " type="text">
+                        <input id="city" class="w-8/12 rounded-3xl border-2 h-12 pl-8 font-sans" autocomplete="off"
+                            type="text">
                         <button id="btnCity"
                             class="w-28 bg-rose-500 text-white font-bold rounded-3xl mt-1  h-10 border-2 border-blue-200">Check
                         </button>
@@ -51,7 +51,7 @@
         </div>
 
         <!--footer-->
-        <footer class="relative top-36 w-full pt-6 box-border">
+        <footer class="relative top-26 w-full pt-6 box-border">
             <p class="text-center">© 2024 Weather-info, Inc. "Weather-info" All Rights Reserved.</p>
         </footer>
     </div>
